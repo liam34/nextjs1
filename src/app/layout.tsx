@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Navigation } from "./components/navigation";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +29,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header className="bg-slate-900 text-white p4 text-center">
+          {/* <p>Welcome to Next.js Crash Course</p> */}
+          <Navigation />
+        </header>
         {children}
+        <footer className="bg-slate-900 text-white p4 text-center">
+        <p>Codevolution</p>
+        </footer>
+        
       </body>
     </html>
   );
